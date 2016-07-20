@@ -1,0 +1,17 @@
+<div class="cont-header no-nav" wds-subhead><!-- scroll 시작하면 class ' scroll' 추가해주시면 됩니다.  -->
+	<div class="down-list clfix">
+		<a href="#">DOWNLOAD</a><!-- script: 클래스 on 추가하면 하단 ul 보입니다. -->
+		<ul *ngIf="page.relatedGuide">
+			<li *ngFor="let dlData of page.relatedGuide"><a href="/wds/New-WDS/download/PAGE/Samsung.com_PAGE%20Guide_v1.02_160331.pdf" target="_blank" title="new open window" onclick="s_control_click('events,eVar32', 'event33', 'event33, samsung.com_page guide_v1.02_160331.pdf', 'o', 'microsite conversion type');download_click('/wds/New-WDS/download/PAGE/', 'Samsung.com_PAGE Guide_v1.02_160331.pdf');"><em>Samsung.com_PAGE Guide_v1.02_160331.pdf</em><span>12.3MB</span>2016-03-31</a></li>
+		</ul>
+	</div><!-- // down-list -->
+	<div class="path" wds-navi>
+		<a href="/">SAMSUNG WDS</a>
+		<a href="#" *ngFor="let parent of parentPageData" menuBtn id="{{parent.page_data.code}}">{{parent.text}}</a>
+		<span class="active">{{page.page_data.title}}</span>
+	</div><!-- // path -->
+	<h2 wds-title>{{page.page_data.title}}</h2>
+	<div class="version" wds-version></div>
+</div><!-- // cont-header  -->
+<div class="cont-body design-overview" wds-body></div><!-- // cont-body -->
+<div class="cont-nav clfix" wds-foot></div><!-- // cont-nav -->

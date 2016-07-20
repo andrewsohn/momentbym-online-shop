@@ -1,0 +1,45 @@
+<!-- 
+<li class="d_group" attr.data-title="{{li.text}}" *ngFor="let li of pages">
+	<a id="{{li.page_data.code}}" href="#" [class.long]="li.children" gnbBtn>{{li.text}}</a>
+	<ul class="depth2" *ngIf="li.children">
+		<li attr.data-title="{{li2.text}}" *ngFor="let li2 of li.children"><a id="{{li2.page_data.code}}" href="#" gnbBtn>{{li2.text}}</a></li>
+	</ul>
+</li>
+ -->
+
+<ul class="mn-nav nav-left">
+    <li class="dropdown" id="{{li.text}}" *ngFor="let li of leftGnb">
+        <a class="{{li.text}}" href="{{li.page_data.url}}">{{li.text}}</a>
+        
+        <ul class="" *ngIf="li.children">
+            <li class="secondary-link" data-title="{{li2.text}}" *ngFor="let li2 of li.children">
+                <a href="{{li2.page_data.url}}">
+                    <img src="{{li2.page_data.imgUrl}}" alt="{{li2.text}}" class="nav-img-lrg">
+                    
+                        {{li2.text}}
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<a href="http://www.mahabis.com/" id="logo-m">
+  <!-- <img alt="mahabis // slippers reinvented logo" class="regular-logo" src="./assets/m-logo.png"> -->
+  LOGO
+</a>
+<ul class="mn-nav nav-right">
+    
+    <li class="dropdown" *ngFor="let li of rightGnb">
+        <a href="{{li.page_data.url}}">{{li.text}}</a>
+        
+        <ul class="" *ngIf="li.children">
+            <li class="secondary-link" data-title="{{li2.text}}" *ngFor="let li2 of li.children">
+                <a href="{{li2.page_data.url}}">
+                    
+                    <img src="{{li2.page_data.imgUrl}}" alt="{{li2.text}}">
+                    
+                    {{li2.text}}
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

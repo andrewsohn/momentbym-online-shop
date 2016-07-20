@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<html lang="kr" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
@@ -20,12 +20,20 @@
     <link rel="canonical" href="http://momentbym.com/">
     <title>MomentBym.com</title>
     <!-- <link href="./favicon.png" rel="shortcut icon"> -->
-    <link rel="stylesheet" href="./assets/style.css" type="text/css" media="all">
-    <link rel="stylesheet" href="todomvc-common/base.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" media="all">
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err){ console.error(err); });
+    </script>
   </head>
   <body class="template-index template-page-all">
-  <section id="todoapp"></section>
 <div id="mobile-nav-button">
     <span class="menu-icon-bar"></span>
     <span class="menu-icon-bar"></span>
@@ -39,224 +47,22 @@
         </a>
     </div> -->
     <div class="hdr-wrapper">
-        <nav id="hdr-nav">
-            <ul class="mn-nav nav-left">
-                
-                <li class="dropdown" id="shop">
-                    <a class="shop" href="http://www.mahabis.com/collections/all-products">shop</a>
-                    
-                    <ul class="">
-                        
-                            
-                            
-                                <li class="secondary-link" data-title="mahabis classic">
-                                    <a href="http://www.mahabis.com/products/larvik-light-grey-mahabis-classic-bundle-slipper-free-soles">
-                                        <img src="./assets/nav-mahabis-1.jpg" alt="mahabis classic" class="nav-img-lrg">
-                                        
-                                            mahabis classic
-                                        
-                                    </a>
-                                </li>
-                            
-                            
-                                <li class="secondary-link" data-title="mahabis summer">
-                                    <a href="http://www.mahabis.com/products/gya-grey-mahabis-summer-bundle-slipper-free-soles">
-                                        <img src="./assets/nav-mahabis-2.jpg" alt="mahabis summer" class="nav-img-lrg">
-                                        
-                                            mahabis summer
-                                        
-                                    </a>
-                                </li>
-                            
-                            
-                                <li class="secondary-link" data-title="gold edition">
-                                    <a href="http://www.mahabis.com/products/larvik-dark-grey-mahabis-gold-edition">
-                                        <img src="./assets/nav-mahabis-3.jpg" alt="gold edition" class="nav-img-lrg">
-                                        
-                                            <span class="text-gold">gold edition</span>
-                                        
-                                    </a>
-                                </li>
-                            
-                            
-                                <li class="secondary-link" data-title="extra soles">
-                                    <a href="http://www.mahabis.com/collections/classic-soles">
-                                        <img src="./assets/nav-mahabis-4.jpg" alt="extra soles" class="nav-img-lrg">
-                                        
-                                            extra soles
-                                        
-                                    </a>
-                                </li>
-                            
-                            
-                                <li class="secondary-link" data-title="gifts &amp; accessories">
-                                    <a href="http://www.mahabis.com/collections/accessories">
-                                        <img src="./assets/nav-mahabis-5.jpg" alt="gifts &amp; accessories" class="nav-img-lrg">
-                                        
-                                            gifts &amp; accessories
-                                        
-                                    </a>
-                                </li>
-                            
-                            <li class="viewall-link">
-                                <a href="http://www.mahabis.com/collections/all-products">view all products &gt;</a>
-                            </li>
-                        
-                    </ul>
-                    
-                </li>
-                
-                <li class="dropdown" id="the-slipper">
-                    <a class="the-slipper" href="http://www.mahabis.com/pages/classic-slipper">the slipper</a>
-                    
-                    <ul class="">
-                        
-                            
-                            
-                                <li class="secondary-link" data-title="about classic">
-                                    <a href="http://www.mahabis.com/pages/classic-slipper">
-                                        <img src="./assets/nav-mahabis-slipper-1_compact.jpg" alt="about classic" class="nav-img-lrg">
-                                        about classic
-                                    </a>
-                                </li>
-                            
-                            
-                                <li class="secondary-link" data-title="about summer">
-                                    <a href="http://www.mahabis.com/pages/summer-slipper">
-                                        <img src="./assets/nav-mahabis-slipper-2_compact.jpg" alt="about summer" class="nav-img-lrg">
-                                        about summer
-                                    </a>
-                                </li>
-                            
-                        
-                    </ul>
-                    
-                </li>
-                
-                <li id="the-brand">
-                    <a class="the-brand" href="http://www.mahabis.com/pages/the-brand">the brand</a>
-                    
-                </li>
-                
-            </ul>
-            <a href="http://www.mahabis.com/" id="logo-m">
-              <!-- <img alt="mahabis // slippers reinvented logo" class="regular-logo" src="./assets/m-logo.png"> -->
-              LOGO
-            </a>
-            <ul class="mn-nav nav-right">
-                
-                <li class="dropdown">
-                    <a href="http://www.mahabis.com/pages/about-us">about us</a>
-                    
-                    <ul class="">
-                        
-                            <li class="secondary-link" data-title="the company">
-                                <a href="http://www.mahabis.com/pages/about-us">
-                                    
-                                    <img src="./assets/nav-mahabis.png" alt="the company">
-                                    
-                                    the company
-                                </a>
-                            </li>
-                        
-                            <li class="secondary-link" data-title="press reviews">
-                                <a href="http://www.mahabis.com/pages/mahabis-press-reviews">
-                                    
-                                    <div class="icon icon-book"></div>
-                                    
-                                    press reviews
-                                </a>
-                            </li>
-                        
-                            <li class="secondary-link" data-title="customer reviews">
-                                <a href="http://www.mahabis.com/pages/mahabis-customer-reviews">
-                                    
-                                    <div class="icon icon-like"></div>
-                                    
-                                    customer reviews
-                                </a>
-                            </li>
-                        
-                    </ul>
-                    
-                </li>
-                
-                <li class="dropdown">
-                    <a href="http://www.mahabis.com/pages/frequently-asked-questions">help</a>
-                    
-                    <ul class="">
-                        
-                            <li class="secondary-link" data-title="FAQ">
-                                <a href="http://www.mahabis.com/pages/frequently-asked-questions">
-                                    
-                                    <div class="icon icon-question"></div>
-                                    
-                                    FAQ
-                                </a>
-                            </li>
-                        
-                            <li class="secondary-link" data-title="Delivery &amp; Returns">
-                                <a href="http://www.mahabis.com/pages/delivery-returns">
-                                    
-                                    <div class="icon icon-shipping"></div>
-                                    
-                                    Delivery &amp; Returns
-                                </a>
-                            </li>
-                        
-                            <li class="secondary-link" data-title="Sizing chart">
-                                <a href="http://www.mahabis.com/pages/sizing-chart">
-                                    
-                                    <div class="icon icon-sizing"></div>
-                                    
-                                    Sizing chart
-                                </a>
-                            </li>
-                        
-                            <li class="secondary-link" data-title="Refer-a-friend">
-                                <a href="http://www.mahabis.com/pages/refer-a-friend">
-                                    
-                                    <div class="icon icon-giftcard"></div>
-                                    
-                                    Refer-a-friend
-                                </a>
-                            </li>
-                        
-                            <li class="secondary-link" data-title="Contact us">
-                                <a href="http://www.mahabis.com/pages/contact">
-                                    
-                                    <div class="icon icon-contact"></div>
-                                    
-                                    Contact us
-                                </a>
-                            </li>
-                        
-                    </ul>
-                    
-                </li>
-                
-                <li>
-                    <a href="http://www.mahabis.com/blogs/journal">journal</a>
-                    
-                </li>
-                
-            </ul>
-        </nav>
+        <nav id="hdr-nav" gnb-container></nav>
     </div>
     <div class="hdr-right">
       <div id="currencies">
-  <ul class="currencySwitcher"><li class="active"><i class="currency-flag currencyGBP_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in great british pounds"><span data-currency="GBP" class="middle selected">£</span></li>
+  <ul class="currencySwitcher"><li class="active"><i class="currency-flag currencyGBP_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in great british pounds"><span data-currency="GBP" class="middle selected">£</span></li>
     
-    <li><i class="currency-flag currencyEUR_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in euro"><span data-currency="EUR" class="middle">€</span></li>
-    <li><i class="currency-flag currencyUSD_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in us dollars"><span data-currency="USD" class="middle">$</span></li>
-    <li><i class="currency-flag currencyINR_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in indian rupees"><span data-currency="INR" class="middle">INR</span></li>
-    <li><i class="currency-flag currencyCAD_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in canadian dollars"><span data-currency="CAD" class="middle">CAD</span></li>
-    <li><i class="currency-flag currencyTWD_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in taiwanese dollars"><span data-currency="TWD" class="middle">TWD</span></li>
-    <li><i class="currency-flag currencyKRW_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in korean wong"><span data-currency="KRW" class="middle">KRW</span></li>
-    <li><i class="currency-flag currencyHKD_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in hong kong dollars"><span data-currency="HKD" class="middle">HKD</span></li>
-    <li><i class="currency-flag currencyAUD_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in australian dollars"><span data-currency="AUD" class="middle">AUD</span></li>
-    <li><i class="currency-flag currencyJPY_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in japanese yen"><span data-currency="JPY" class="middle">JPY</span></li>
-    <li><i class="currency-flag currencyNZD_sm"></i><img class="hidden" src="./assets/1x1.png" alt="buy mahabis slippers in new zealand dollars"><span data-currency="NZD" class="middle">NZD</span></li>
+    <li><i class="currency-flag currencyEUR_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in euro"><span data-currency="EUR" class="middle">€</span></li>
+    <li><i class="currency-flag currencyUSD_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in us dollars"><span data-currency="USD" class="middle">$</span></li>
+    <li><i class="currency-flag currencyINR_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in indian rupees"><span data-currency="INR" class="middle">INR</span></li>
+    <li><i class="currency-flag currencyCAD_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in canadian dollars"><span data-currency="CAD" class="middle">CAD</span></li>
+    <li><i class="currency-flag currencyTWD_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in taiwanese dollars"><span data-currency="TWD" class="middle">TWD</span></li>
+    <li><i class="currency-flag currencyKRW_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in korean wong"><span data-currency="KRW" class="middle">KRW</span></li>
+    <li><i class="currency-flag currencyHKD_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in hong kong dollars"><span data-currency="HKD" class="middle">HKD</span></li>
+    <li><i class="currency-flag currencyAUD_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in australian dollars"><span data-currency="AUD" class="middle">AUD</span></li>
+    <li><i class="currency-flag currencyJPY_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in japanese yen"><span data-currency="JPY" class="middle">JPY</span></li>
+    <li><i class="currency-flag currencyNZD_sm"></i><img class="hidden" src="./assets/img/1x1.png" alt="buy mahabis slippers in new zealand dollars"><span data-currency="NZD" class="middle">NZD</span></li>
   </ul>
 </div>
       <div class="mini-cart-items-wrap">
@@ -408,21 +214,18 @@
      <div itemscope="" itemtype="http://schema.org/Organization" class="hidden">
   <link itemprop="url" href="https://www.mahabis.com/">
   <span itemprop="name">mahabis</span>
-  <img itemprop="logo" src="./assets/m-logo.png">
+  <img itemprop="logo" src="./assets/img/m-logo.png">
   <a itemprop="sameAs" href="#">FB</a>
   <a itemprop="sameAs" href="#">Twitter</a>
   <a itemprop="sameAs" href="#">Instagram</a>
   <a itemprop="sameAs" href="#">Google+</a>
   <a itemprop="sameAs" href="#">Pinterest</a>
 </div>
-
-
-
     
       <section class="hero-home hero-dark dark-overlay-1" style="height: 884px;">
     
     <div class="hero-home-img">
-        <div id="home-main-img" data-bg-position="center bottom" data-background-img="./assets/bg.jpg" style="background-image:url('./assets/bg.jpg');background-position:center bottom;background-size:cover;"></div>
+        <div id="home-main-img" data-bg-position="center bottom" data-background-img="./assets/img/bg.jpg" style="background-image:url('./assets/img/bg.jpg');background-position:center bottom;background-size:cover;"></div>
     </div>
     <div class="hero-home-content">
         <div class="v-middle">
@@ -441,7 +244,7 @@
         <h2>your everyday adventures</h2>
          <a class="button" href="http://www.mahabis.com/pages/classic-slipper">learn more &gt;</a>
     </div>
-    <a href="http://www.mahabis.com/products/larvik-light-grey-mahabis-classic-bundle-slipper-free-soles" class="hero-home-ftr-img"><img src="./assets/herobar-small-img_compact.jpg" alt="your everyday adventures"></a>
+    <a href="http://www.mahabis.com/products/larvik-light-grey-mahabis-classic-bundle-slipper-free-soles" class="hero-home-ftr-img"><img src="./assets/img/herobar-small-img_compact.jpg" alt="your everyday adventures"></a>
 </section>
 <section id="product-home">
     <div class="wrapper">
@@ -460,17 +263,17 @@
                     
                     
                 <div class="owl-stage-outer"><div class="owl-stage" style="transition: 0.25s; width: 3540px; transform: translate3d(-295px, 0px, 0px);"><div class="owl-item" style="width: 590px; margin-right: 0px;"><div data-upper="larvik light grey mahabis classic" data-col="mc" data-upcolor="lg" class="slider-item">
-                        <img class="lazy" src="./assets/light_grey_grey2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/light_grey_grey2.jpg?1959" alt="larvik light grey mahabis classic slipper with outdoor sole">
+                        <img class="lazy" src="./assets/img/light_grey_grey2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/light_grey_grey2.jpg?1959" alt="larvik light grey mahabis classic slipper with outdoor sole">
                     </div></div><div class="owl-item active center" style="width: 590px; margin-right: 0px;"><div data-upper="larvik dark grey mahabis classic" data-col="mc" data-upcolor="dg" class="slider-item">
-                        <img class="lazy" src="./assets/dark_grey_grey2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/dark_grey_grey2.jpg?1959" alt="larvik dark grey mahabis classic slipper with outdoor sole">
+                        <img class="lazy" src="./assets/img/dark_grey_grey2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/dark_grey_grey2.jpg?1959" alt="larvik dark grey mahabis classic slipper with outdoor sole">
                     </div></div><div class="owl-item active" style="width: 590px; margin-right: 0px;"><div data-upper="nora navy mahabis summer" data-col="ms" data-upcolor="nn" class="slider-item">
-                        <img class="lazy" src="./assets/MS-B-NN-LG-2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/MS-B-NN-LG-2.jpg" alt="nora navy mahabis summer slipper with outdoor sole">
+                        <img class="lazy" src="./assets/img/MS-B-NN-LG-2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/MS-B-NN-LG-2.jpg" alt="nora navy mahabis summer slipper with outdoor sole">
                     </div></div><div class="owl-item" style="width: 590px; margin-right: 0px;"><div data-upper="gya grey mahabis summer" data-col="ms" data-upcolor="gg" class="slider-item">
-                        <img class="lazy" src="./assets/MS-B-GG-LG-2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/MS-B-GG-LG-2.jpg" alt="gya grey mahabis summer slipper with outdoor sole">
+                        <img class="lazy" src="./assets/img/MS-B-GG-LG-2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/MS-B-GG-LG-2.jpg" alt="gya grey mahabis summer slipper with outdoor sole">
                     </div></div><div class="owl-item" style="width: 590px; margin-right: 0px;"><div data-upper="sala stone mahabis summer" data-col="ms" data-upcolor="ss" class="slider-item">
-                        <img class="lazy" src="./assets/MS-B-SS-LG-2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/MS-B-SS-LG-2.jpg" alt="sala stone mahabis summer slipper with outdoor sole">
+                        <img class="lazy" src="./assets/img/MS-B-SS-LG-2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/MS-B-SS-LG-2.jpg" alt="sala stone mahabis summer slipper with outdoor sole">
                     </div></div><div class="owl-item" style="width: 590px; margin-right: 0px;"><div data-upper="agen aqua mahabis summer" data-col="ms" data-upcolor="aa" class="slider-item">
-                        <img class="lazy" src="./assets/MS-B-AA-LG-2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/MS-B-AA-LG-2.jpg" alt="agen aqua mahabis summer slipper with outdoor sole">
+                        <img class="lazy" src="./assets/img/MS-B-AA-LG-2.jpg" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/MS-B-AA-LG-2.jpg" alt="agen aqua mahabis summer slipper with outdoor sole">
                     </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="display: none;">prev</div><div class="owl-next" style="display: none;">next</div></div><div class="owl-dots" style=""><div class="owl-dot"><span></span></div><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
             </div>
         </div>
@@ -498,8 +301,8 @@
 <section class="ltd-home">
     <div class="wrapper clearfix">
         <div class="ltd-imgs">
-            <img src="./assets/gold-home-1.png" alt="mahabis gold edition slippers" class="foreground">
-            <img src="./assets/gold-home-2.png" alt="mahabis gold edition slippers" class="background">
+            <img src="./assets/img/gold-home-1.png" alt="mahabis gold edition slippers" class="foreground">
+            <img src="./assets/img/gold-home-2.png" alt="mahabis gold edition slippers" class="background">
         </div>
         <div class="ltd-text">
             <h2 class="h1">introducing... <br>exclusive comfort</h2>
@@ -514,25 +317,25 @@
   </div>
 
   <div id="instafeed">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-darkgrey-lg-01.jpg?4379759881930639235" data-sole="larvikgrey" data-upper="dg" data-collection="classic" alt="mahabis classic slipper in dark grey with larvik grey sole // #mahabisselfie">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-s-nn-ii__instagram-mahabis-summer-nora-navy-slipper-ilen-ivory-sole-01_99667808-3b8e-4b2d-91fa-2316ca3b5e8e.jpg?10844032569275614229" data-sole="ilenivory" data-upper="nn" data-collection="summer" alt="mahabis nora navy summer slippers with ivory detachable sole // #mahabisselfie #downtime #summer">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-darkgrey-rr-01.jpg?10844032569275614229" data-sole="larvikgrey" data-upper="lg" data-collection="classic" alt="mahabis classic light grey slipper with rjukan red detachable sole // #mahabisselfie">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-c-lg-lg__instagram-mahabis-classic-light-grey-slipper-larvik-grey-sole-03_4ec73ab5-d045-42b4-88b0-3e86205bd6d3.jpg?10844032569275614229" data-sole="larvikgrey" data-upper="lg" data-collection="classic" alt="mahabis classic slippers in light grey with larvik grey sole // #mahabisselfie #outdoorslipper">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-darkgrey-sy-01.jpg?10844032569275614229" data-sole="skaneyellow" data-upper="dg" data-collection="classic" alt="mahabis womens slipper with skane yellow outdoor sole against a wall // #mahabisselfie">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-c-lg-gg__instagram-mahabis-classic-light-grey-slipper-gotland-green-sole-04_b979ffbd-e9b0-4c79-9463-464e08c55333.jpg?10844032569275614229" data-sole="gotlandgreen" data-upper="lg" data-collection="classic" alt="mahabis classic slipper with gotland geen sole // #mahabisselfie #yoga">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-lightgrey-ns-01.jpg?4379759881930639235" data-sole="nosole" data-upper="lg" data-collection="classic" alt="mahabis light grey classic ladies slipper top down view // #mahabisselfie">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-s-ss-ii__instagram-mahabis-summer-sala-stone-slipper-ilen-ivory-sole-01_5fc627c9-a68a-426f-94a2-872058043358.jpg?10844032569275614229" data-sole="ilenivory" data-upper="ss" data-collection="summer" alt="mahabis summer slipper in sala stone with ilen ivory sole on sofa // #mahabisselfie #downtimeredesigned #slippersreinveted">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-lightgrey-ns-03.jpg?4379759881930639235" data-sole="nosole" data-upper="lg" data-collection="classic" alt="mahabis classic light grey slipper from the back // #mahabisselfie">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-lightgrey-rr-02.jpg?4379759881930639235" data-sole="rjukanred" data-upper="lg" data-collection="classic" alt="mahabis classic light grey slipper with rjukan red sole on a mahabis box // #mahabisselfie">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-c-lg-ns__instagram-mahabis-classic-light-grey-slipper-no-sole-03_5b751395-311f-4a8f-8c7e-68c5c472c6a8.jpg?10844032569275614229" data-sole="nosole" data-upper="dg" data-collection="classic" alt="mahabis classic slipper with box // #mahabisselfie #lifestyle">
-  <img class="ig-ftr" src="./assets/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-c-lg-gg__instagram-mahabis-classic-light-grey-slipper-gotland-green-sole-02_71bc74ff-3e77-4ad9-8c7a-510f9a2b31a7.jpg?10844032569275614229" data-sole="gotlandgreen" data-upper="lg" data-collection="classic" alt="mahabis classic light grey slipper with gotland green sole // #mahabisselfie #jiujitsu">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-darkgrey-lg-01.jpg?4379759881930639235" data-sole="larvikgrey" data-upper="dg" data-collection="classic" alt="mahabis classic slipper in dark grey with larvik grey sole // #mahabisselfie">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-s-nn-ii__instagram-mahabis-summer-nora-navy-slipper-ilen-ivory-sole-01_99667808-3b8e-4b2d-91fa-2316ca3b5e8e.jpg?10844032569275614229" data-sole="ilenivory" data-upper="nn" data-collection="summer" alt="mahabis nora navy summer slippers with ivory detachable sole // #mahabisselfie #downtime #summer">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-darkgrey-rr-01.jpg?10844032569275614229" data-sole="larvikgrey" data-upper="lg" data-collection="classic" alt="mahabis classic light grey slipper with rjukan red detachable sole // #mahabisselfie">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-c-lg-lg__instagram-mahabis-classic-light-grey-slipper-larvik-grey-sole-03_4ec73ab5-d045-42b4-88b0-3e86205bd6d3.jpg?10844032569275614229" data-sole="larvikgrey" data-upper="lg" data-collection="classic" alt="mahabis classic slippers in light grey with larvik grey sole // #mahabisselfie #outdoorslipper">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-darkgrey-sy-01.jpg?10844032569275614229" data-sole="skaneyellow" data-upper="dg" data-collection="classic" alt="mahabis womens slipper with skane yellow outdoor sole against a wall // #mahabisselfie">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-c-lg-gg__instagram-mahabis-classic-light-grey-slipper-gotland-green-sole-04_b979ffbd-e9b0-4c79-9463-464e08c55333.jpg?10844032569275614229" data-sole="gotlandgreen" data-upper="lg" data-collection="classic" alt="mahabis classic slipper with gotland geen sole // #mahabisselfie #yoga">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-lightgrey-ns-01.jpg?4379759881930639235" data-sole="nosole" data-upper="lg" data-collection="classic" alt="mahabis light grey classic ladies slipper top down view // #mahabisselfie">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-s-ss-ii__instagram-mahabis-summer-sala-stone-slipper-ilen-ivory-sole-01_5fc627c9-a68a-426f-94a2-872058043358.jpg?10844032569275614229" data-sole="ilenivory" data-upper="ss" data-collection="summer" alt="mahabis summer slipper in sala stone with ilen ivory sole on sofa // #mahabisselfie #downtimeredesigned #slippersreinveted">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-lightgrey-ns-03.jpg?4379759881930639235" data-sole="nosole" data-upper="lg" data-collection="classic" alt="mahabis classic light grey slipper from the back // #mahabisselfie">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-classic-lightgrey-rr-02.jpg?4379759881930639235" data-sole="rjukanred" data-upper="lg" data-collection="classic" alt="mahabis classic light grey slipper with rjukan red sole on a mahabis box // #mahabisselfie">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-c-lg-ns__instagram-mahabis-classic-light-grey-slipper-no-sole-03_5b751395-311f-4a8f-8c7e-68c5c472c6a8.jpg?10844032569275614229" data-sole="nosole" data-upper="dg" data-collection="classic" alt="mahabis classic slipper with box // #mahabisselfie #lifestyle">
+  <img class="ig-ftr" src="./assets/img/ig-loading.png" data-src="//cdn.shopify.com/s/files/1/0238/5795/files/ig-c-lg-gg__instagram-mahabis-classic-light-grey-slipper-gotland-green-sole-02_71bc74ff-3e77-4ad9-8c7a-510f9a2b31a7.jpg?10844032569275614229" data-sole="gotlandgreen" data-upper="lg" data-collection="classic" alt="mahabis classic light grey slipper with gotland green sole // #mahabisselfie #jiujitsu">
 </div>
 
 
     <section id="product-funnel">
         <a href="http://www.mahabis.com/pages/the-brand" title="mahabis lifestyle">
             <div class="funnel-img">
-                <img src="./assets/funnel-1.jpg" alt="mahabis lifestyle">
+                <img src="./assets/img/funnel-1.jpg" alt="mahabis lifestyle">
             </div>
             <div class="funnel-txt">
                 
@@ -644,7 +447,7 @@
                     <a class="no-thanks popups-close" href="http://www.mahabis.com/#">no thanks, I don’t want a discount</a>
                 </div>
                 <div class="modal-img">
-                    <img src="./assets/popup-bottom.jpg" alt="get 10% off your first mahabis order">
+                    <img src="./assets/img/popup-bottom.jpg" alt="get 10% off your first mahabis order">
                 </div>
             </div>
             <div class="modal-close icons icon-cross"></div>
@@ -669,7 +472,7 @@
                     <a class="no-thanks popups-close" href="http://www.mahabis.com/#">no thanks, I don’t want a discount</a>
                 </div>
                 <div class="modal-img">
-                    <img src="./assets/popup-product.png" alt="get 10% off your first mahabis order">
+                    <img src="./assets/img/popup-product.png" alt="get 10% off your first mahabis order">
                 </div>
             </div>
             <div class="modal-close icons icon-cross"></div>
@@ -690,7 +493,7 @@
                     <a class="no-thanks popups-close" href="http://www.mahabis.com/#">ok, thanks</a>
                 </div>
                 <div class="modal-img">
-                    <img src="./assets/popup-bottom.jpg" alt="get 10% off your first mahabis order">
+                    <img src="./assets/img/popup-bottom.jpg" alt="get 10% off your first mahabis order">
                 </div>
             </div>
             <div class="modal-close icons icon-cross"></div>
@@ -700,7 +503,7 @@
 </div>
 
   
-  <script src="./assets/jquery-1.12.0.min.js" type="text/javascript"></script>
+  <script src="./assets/js/jquery-1.12.0.min.js" type="text/javascript"></script>
   <script>
 
 //
@@ -907,9 +710,9 @@ var selectCallback = function(variant, selector) {
 jQuery('.selected-currency').text(Currency.currentCurrency);
 
 </script>
-  <script src="./assets/modernizr-2.6.2.min.js" type="text/javascript"></script>
+  <script src="./assets/js/modernizr-2.6.2.min.js" type="text/javascript"></script>
   <script src="./assets/jquery.cookie.js" type="text/javascript"></script>
-  <script src="./assets/owl.carousel.min.js" type="text/javascript"></script>
+  <script src="./assets/js/owl.carousel.min.js" type="text/javascript"></script>
   <script src="./assets/jquery.api.js" type="text/javascript"></script>
   <script src="./assets/jquery.zoom.min.js" type="text/javascript"></script>
   <script src="./assets/jquery.panzoom.min.js" type="text/javascript"></script>
@@ -1034,6 +837,5 @@ jQuery('.selected-currency').text(Currency.currentCurrency);
         $('#product-home-video video').css('width', homeImgWidth);
     });
 </script>
-<script src="js/bundle.js"></script>
 </body>
 </html>

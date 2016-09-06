@@ -9,7 +9,7 @@
     "tsc:w": "tsc -w",
     "typings": "typings"
   },
-  "author": "HiveLab Samsung Opt",
+  "author": "Andrew Jin Sohn",
   "license": "ISC",
   "dependencies": {
     "@angular/common": "2.0.0-rc.1",
